@@ -30,23 +30,23 @@ function App() {
      <p>Elige el plan que más te convenga y comienza a aprender hoy mismo.</p>
 
      <section className='container-cards'>
-      {
-      <article>
+      {Object.values(DatePricesCard).map((plan) => (
+      <article className='card'>
         <p>
-          <span>${basic.price} </span>
+          <span>${plan.price} </span> 
           /mes
         </p>
-        <h2>{basic.title}</h2>
-        <p>{basic.description}</p>
+        <h2>{plan.title}</h2>
+        <p>{plan.description}</p>
         <ul>
-          {basic.items.map((item, index) => (
+          {plan.items.map((item, index) => (
             <li key={index}>{item}</li>
           ))}
         </ul>
 
         <button>Elegir plan</button>
       </article>
-      }
+      ))}
      </section>
     </>
   )
