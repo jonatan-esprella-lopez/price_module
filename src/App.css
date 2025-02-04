@@ -12,11 +12,10 @@
   padding: 2em;
 }
 
-
-
 .container-cards{
   width: 1170px;
   height: 470px;
+  margin-top: 3rem;
   border-radius: 26px;
   background-color: var(--color-white);
   display: flex;
@@ -33,4 +32,66 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.price {
+  color: var(--color-gray);
+}
+
+.price span{
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.description-prices {
+  color: var(--color-gray);
+  font-family: Poppins;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.items-prices {
+  color: var(--color-gray);
+  font-size: 13px;
+}
+
+.card-popular {
+  background-color: var(--Primary);
+  color: var(--color-black);
+  padding: 4em 2em 2em 2em;
+  border-radius: 26px;
+  /* box-shadow: 0 50px 10px  0px rgba(10, 10, 10, 0.3);  */
+  box-shadow: 0px 42px 34px 0px rgba(82, 67, 194, 0.30); 
+  margin: 1em;
+  top: -60px;
+  position: relative;
+  width: 300px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Button-popular{
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.card-popular {
+  display: flex;
+  justify-content: end;
+}
+
+.item-popular {
+  border-radius: 13px;
+  color: var(--color-black);
+  background-color: var(--color-light-orange);
+  font-size: 11px;
+  padding-top: 2px;
+  font-weight: 500;
+  width: 115px;
+  height: 38px; 
+  text-align: center;
 }
