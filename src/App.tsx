@@ -43,13 +43,14 @@ function App() {
         <ul className='items-prices'>
           {plan.items.map((item, index) => (
             <div>
-              {plan.state == "MÁS POPULAR" ?
-                <img src={IconCheck} alt="" />
-                :
-                <img src={IconCheckWhite} alt="" />
-              }
+              
               <li key={index}>
                 <span className={item.status == true ? "item-activo" :'item-inactivo'}>
+                  {plan.state == "MÁS POPULAR" ?
+                    <img src={IconCheck} alt="" />
+                    :
+                    <img src={IconCheckWhite} alt="" />
+                  }
                   {item.item}
                 </span>
               </li>
