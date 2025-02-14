@@ -1,11 +1,15 @@
 
 import { DatePricesCard } from './data/date-prices-card'
 
+import IconCheck from './assets/module-prices/check-circle.svg'
+import IconCheckWhite from './assets/module-prices/check-circle-white.svg'
+
 import './App.css'
 
 interface DatePricesCard {
   [key: string]: {
     id: number;
+    state: string;
     price: number; 
     title: string;
     description: string;
@@ -15,15 +19,6 @@ interface DatePricesCard {
 
 function App() {
 
-  const datePricesCard: DatePricesCard  = DatePricesCard
-
-  const basic = datePricesCard.basic
-  const intermediate = datePricesCard.intermediate
-  const professional = datePricesCard.professional
-  const professionalPlus = datePricesCard.professionalPlus
-
-  console.log(datePricesCard)
-
   return (
     <>
      <h1>Planes y precios</h1>
@@ -31,20 +26,30 @@ function App() {
 
      <section className='container-cards'>
       {Object.values(DatePricesCard).map((plan) => (
-      <article className='card'>
-        <p>
-          <span>${plan.price} </span> 
+      <article className={plan.state == "MÁS POPULAR" ? "card-popular" :'card'} >
+        {plan.state == "MÁS POPULAR" ? 
+          <p className='item-popular'>MÁS POPULAR</p> : ''
+        }
+        <p className='price'>
+          <span>${(plan.price >= 1000) ? (plan.price/1000)+",000": (plan.price%1000)} </span> 
           /mes
         </p>
         <h2>{plan.title}</h2>
-        <p>{plan.description}</p>
-        <ul>
+        <p className='description-prices'>{plan.description}</p>
+        <ul className='items-prices'>
           {plan.items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <div>
+              {plan.state == "MÁS POPULAR" ?
+                <img src={IconCheck} alt="" />
+                :
+                <img src={IconCheckWhite} alt="" />
+              }
+              <li key={index}>{item}</li>
+            </div>
           ))}
         </ul>
 
-        <button>Elegir plan</button>
+        <button className={plan.state == "MÁS POPULAR" ? "Button-popular" :''}>Elegir plan</button>
       </article>
       ))}
      </section>

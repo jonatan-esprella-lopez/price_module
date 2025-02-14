@@ -14,6 +14,8 @@
 
   --Primary: #FF8E3C;
 
+
+  --color-light-orange: #FFD5B6;
   --color-white: #FFFFFF;
   --color-black: #373737;
   --color-bg: #F5F5FA;
@@ -29,7 +31,7 @@ h1 {
 h2 {
   padding: 0;
   margin: 0;
-  font-size: 28px;
+  font-size: 22px;
 }
 
 button {
@@ -39,12 +41,12 @@ button {
   color: var(--Primary);
   border-radius: 90px;
   border: 1px solid transparent;
-  padding: 12px 32px;
+  padding: 10px 32px;
   font-family: inherit;
   background: rgba(255, 142, 60, 0.10);
   cursor: pointer;
   transition: border-color 0.25s;
-  font-size: 16px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 700;
 }

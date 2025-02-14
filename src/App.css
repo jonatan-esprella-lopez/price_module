@@ -55,8 +55,26 @@
 .items-prices {
   color: var(--color-gray);
   font-size: 13px;
+  list-style-type: none;
+  padding-left: 0;
 }
 
+.items-prices div {
+  display: flex;
+  padding: 6px 0;
+  align-items: center;
+}
+
+.item-popular li{
+  padding-top: 10px;
+}
+
+.items-prices div img {
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+}
+  
 .card-popular {
   background-color: var(--Primary);
   color: var(--color-black);
@@ -82,16 +100,26 @@
 .card-popular {
   display: flex;
   justify-content: end;
+  position: relative;
 }
 
+
 .item-popular {
+  position: absolute;
+  top: 5px;
+  right: 15px;
   border-radius: 13px;
   color: var(--color-black);
   background-color: var(--color-light-orange);
   font-size: 11px;
-  padding-top: 2px;
-  font-weight: 500;
+  padding-top: 5px;
   width: 115px;
-  height: 38px; 
+  height: 20px;
   text-align: center;
+  font-weight: 600;
+}
+
+
+.card-popular .description-prices, .card-popular .price, .card-popular .items-prices {
+  color: var(--color-black);
 }
