@@ -7,6 +7,23 @@
   height: 100vh;
 }
 
+.body-container-prices {
+  width: 100vw;
+  background-color: var(--color-bg);
+}
+
+.container-title{
+  margin-top: 3rem;
+  margin-bottom: 55px;
+  width: 1170px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.container-title p, h1{
+  margin: 10px;
+}
 
 .card {
   padding: 2em;
@@ -57,6 +74,11 @@
   font-size: 13px;
   list-style-type: none;
   padding-left: 0;
+}
+
+
+.item-inactivo{
+  opacity: 0.4;
 }
 
 .items-prices div {
@@ -123,3 +145,69 @@
 .card-popular .description-prices, .card-popular .price, .card-popular .items-prices {
   color: var(--color-black);
 }
+
+
+
+@media (max-width: 768px) {
+
+  .body-container-prices{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    .container-cards {
+      background-color: var(--color-bg);
+      width: 100%;
+      height: auto;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .container-title {
+      max-width: 290px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .container-title {
+      font-size: 9px;
+      margin-bottom: 0rem;
+    }
+
+    .container-title p{
+      text-align: start;
+      font-size: 16px;
+    }
+
+    .card-popular{
+      top: 0.5rem;
+        max-width: 210px;
+        margin: 1em;
+    }
+
+    .card{
+      max-width: 210px;
+      height: 470px;
+      margin-top: 3rem;
+      border-radius: 26px;
+      background-color: var(--color-white);
+    }
+  }
+  
+  .card:nth-child(1) { grid-area: card1; }
+  .card:nth-child(2) { grid-area: card2; }
+  .card-popular:nth-child(3) { grid-area: card3; }
+  .card:nth-child(4) { grid-area: card4; }
+
+
+  @media (max-width: 768px) {
+    .container-cards {
+      grid-template-areas: 
+        "card3"
+        "card1"
+        "card2"
+        "card4";
+    }
+  }

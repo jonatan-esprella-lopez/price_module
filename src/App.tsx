@@ -5,6 +5,8 @@ import IconCheck from './assets/module-prices/check-circle.svg'
 import IconCheckWhite from './assets/module-prices/check-circle-white.svg'
 
 import './App.css'
+import './pages/module-prices/view-mobile.module.css'
+
 
 interface DatePricesCard {
   [key: string]: {
@@ -20,9 +22,11 @@ interface DatePricesCard {
 function App() {
 
   return (
-    <>
-     <h1>Planes y precios</h1>
-     <p>Elige el plan que más te convenga y comienza a aprender hoy mismo.</p>
+    <div className='body-container-prices'>
+    <div className='container-title'>
+      <h1>Planes y precios</h1>
+      <p>Elige el plan que más te convenga y comienza a aprender hoy mismo.</p>
+    </div>
 
      <section className='container-cards'>
       {Object.values(DatePricesCard).map((plan) => (
@@ -44,7 +48,11 @@ function App() {
                 :
                 <img src={IconCheckWhite} alt="" />
               }
-              <li key={index}>{item}</li>
+              <li key={index}>
+                <span className={item.status == true ? "item-activo" :'item-inactivo'}>
+                  {item.item}
+                </span>
+              </li>
             </div>
           ))}
         </ul>
@@ -53,7 +61,7 @@ function App() {
       </article>
       ))}
      </section>
-    </>
+    </div>
   )
 }
 

@@ -108,7 +108,7 @@ export const DatePricesCard: DatePricesCard = {
         status: true,
       },
       {
-        item: "Acceso a Discord",
+        item: "Mentorías personalizadas",
         status: true,
       },
     ],
