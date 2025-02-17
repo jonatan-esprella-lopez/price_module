@@ -1,10 +1,10 @@
 import { DatePricesCard } from "../../data/date-prices-card";
 
-import IconCheck from "./assets/module-prices/check-circle.svg";
-import IconCheckWhite from "./assets/module-prices/check-circle-white.svg";
+import IconCheck from "../../assets/module-prices/check-circle.svg";
+import IconCheckWhite from "../../assets/module-prices/check-circle-white.svg";
 
-import "./App.css";
-import "./pages/module-prices/view-mobile.module.css";
+import "../../App.css";
+import "../../pages/module-prices/view-mobile.module.css";
 
 interface DatePricesCard {
   [key: string]: {
@@ -38,10 +38,11 @@ export const ViewPlans = () => {
             )}
             <p className="price">
               <span>
-                $
-                {plan.price >= 1000
+                
+                ${plan.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                {/* {plan.price >= 1000
                   ? plan.price / 1000 + ",000"
-                  : plan.price % 1000}{" "}
+                  : plan.price % 1000}{" "} */}
               </span>
               /mes
             </p>

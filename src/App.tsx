@@ -35,7 +35,11 @@ function App() {
           <p className='item-popular'>MÁS POPULAR</p> : ''
         }
         <p className='price'>
-          <span>${(plan.price >= 1000) ? (plan.price/1000)+",000": (plan.price%1000)} </span> 
+          <span>
+            {/* {(plan.price >= 1000) ? (plan.price/1000)+",000": (plan.price%1000)}  */}
+            ${plan.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+  
+          </span> 
           /mes
         </p>
         <h2>{plan.title}</h2>
